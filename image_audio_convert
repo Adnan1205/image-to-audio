@@ -1,0 +1,20 @@
+!pip install easyocr
+import easyocr
+reader =easyocr.Reader(['en'])
+results=reader.readtext('motivational-quotes.jpg')
+
+text2=''
+for result in results:
+  text2+= result[1]+ ' '
+  
+  !pip install gTTS
+  
+from gtts import gTTS
+text1=text2
+language="en"
+gtts_object=gTTS(text=text1,lang=language,slow=False)
+gtts_object.save("/content/gtts.wav")
+
+from IPython.display import Audio
+Audio("/content/gtts.wav")
+
