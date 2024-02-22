@@ -1,5 +1,6 @@
 !pip install easyocr
 import easyocr
+print("jello")
 reader =easyocr.Reader(['en'])
 results=reader.readtext('motivational-quotes.jpg')
 
